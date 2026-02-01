@@ -2,10 +2,93 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  color: white;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100%;
+  font-size: clamp(0.875rem, 1vw + 0.5rem, 1.125rem);
   background-color: black;
+}
+
+i {
+  color: white;
+  font-size: 40px;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .reels-container {
+  width: 100%;
+  height: 100%;
+}
+main .reels-container .reel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+main .reels-container .reel .reel-left {
+  background-color: red;
+  width: 100%;
+  position: relative;
+}
+main .reels-container .reel .reel-left video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .reels-container .reel .reel-left .reel-left-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  bottom: 10px;
+  color: white;
+  padding: 10px;
+  position: absolute;
+}
+main .reels-container .reel .reel-left .reel-left-bottom .bottom-up {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+main .reels-container .reel .reel-left .reel-left-bottom .bottom-up h3 {
+  font-size: 1rem;
+}
+main .reels-container .reel .reel-left .reel-left-bottom .bottom-up button {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+}
+main .reels-container .reel .reel-left .reel-left-bottom .bottom-down p {
+  font-size: 1rem;
+}
+main .reels-container .reel .reel-left .reel-left-bottom img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .reels-container .reel .reel-right {
+  position: absolute;
+  right: 5px;
+  top: 65%;
+}
+main .reels-container .reel .reel-right div {
+  margin-bottom: 15px;
+}
+main .reels-container .reel .reel-right div p {
+  font-size: 1.5rem;
 }/*# sourceMappingURL=style.css.map */
