@@ -25,18 +25,26 @@ main {
   justify-content: center;
   align-items: center;
 }
+main .reels-container::-webkit-scrollbar {
+  display: none;
+}
 main .reels-container {
   width: 100%;
   height: 100%;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow: auto;
 }
 main .reels-container .reel {
   width: 100%;
   height: 100%;
   display: flex;
   position: relative;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  overflow: hidden;
 }
 main .reels-container .reel .reel-left {
-  background-color: red;
   width: 100%;
   position: relative;
 }
@@ -47,13 +55,15 @@ main .reels-container .reel .reel-left video {
      object-fit: cover;
 }
 main .reels-container .reel .reel-left .reel-left-bottom {
+  width: 100vw;
   display: flex;
   flex-direction: column;
-  gap: 7px;
-  bottom: 10px;
+  gap: 8px;
+  bottom: 0px;
   color: white;
-  padding: 10px;
+  padding: 15px;
   position: absolute;
+  background: linear-gradient(transparent, black);
 }
 main .reels-container .reel .reel-left .reel-left-bottom .bottom-up {
   display: flex;
@@ -84,11 +94,17 @@ main .reels-container .reel .reel-left .reel-left-bottom img {
 main .reels-container .reel .reel-right {
   position: absolute;
   right: 5px;
-  top: 65%;
+  top: 55%;
+  margin-bottom: 10px;
 }
 main .reels-container .reel .reel-right div {
   margin-bottom: 15px;
 }
 main .reels-container .reel .reel-right div p {
   font-size: 1.5rem;
+}
+main .reels-container .reel .reel-right .like, main .reels-container .reel .reel-right .commet {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }/*# sourceMappingURL=style.css.map */
