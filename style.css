@@ -54,6 +54,15 @@ main .reels-container .reel .reel-left video {
   -o-object-fit: cover;
      object-fit: cover;
 }
+main .reels-container .reel .reel-left .insta-like {
+  width: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.2);
+  pointer-events: none;
+}
 main .reels-container .reel .reel-left .reel-left-bottom {
   width: 100vw;
   display: flex;
@@ -103,8 +112,32 @@ main .reels-container .reel .reel-right div {
 main .reels-container .reel .reel-right div p {
   font-size: 1.5rem;
 }
-main .reels-container .reel .reel-right .like, main .reels-container .reel .reel-right .commet {
+main .reels-container .reel .reel-right .like,
+main .reels-container .reel .reel-right .commet {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.insta-like.show {
+  animation: likePop 0.7s ease-out forwards;
+}
+
+@keyframes likePop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -70%) scale(1.4);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(-50%, -150%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -250%) scale(0.7);
+  }
 }/*# sourceMappingURL=style.css.map */

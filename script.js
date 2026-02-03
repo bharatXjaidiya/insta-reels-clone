@@ -80,12 +80,13 @@ let reels =  [
     "comments": "176"
   }
 ];
-
+//appending the reels into the reel-container
 let reelContainer = document.querySelector(".reels-container");
 let content = '';
-reels.forEach((e)=>{
-    content += `<div class="reel">
+reels.forEach((e,idx)=>{
+    content += `<div id="${idx}" class="reel">
                 <div class="reel-left">
+                <img class="insta-like" src="assets/images/insta-like-removebg-preview.png" alt="">
                     <video src="assets/videos/${e.videoLink}.mp4" autoplay loop muted playsinline>
                     </video>
                     <div class="reel-left-bottom">
@@ -120,4 +121,24 @@ reels.forEach((e)=>{
             </div>`  
 })
 
-reelContainer.innerHTML = content;
+reelContainer.innerHTML = reelContainer.innerHTML + content;
+let lastTap = 0;
+document.querySelectorAll(".reel ").forEach(reel => {
+  //adding the like feature
+  const heart = reel.querySelector(".insta-like");
+  reel.querySelector("video").addEventListener("click", () => {
+    const now = Date.now();
+
+    if (now - lastTap < 300) {
+      heart.classList.add("show");
+
+      setTimeout(() => {
+        heart.classList.remove("show");
+      }, 700);
+    }
+
+    lastTap = now;
+  });
+
+
+});
