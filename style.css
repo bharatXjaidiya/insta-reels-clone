@@ -118,6 +118,10 @@ main .reels-container .reel .reel-right .commet {
   justify-content: center;
   flex-direction: column;
 }
+main .reels-container .reel .reel-right .like p,
+main .reels-container .reel .reel-right .commet p {
+  text-align: center;
+}
 
 .insta-like.show {
   animation: likePop 0.7s ease-out forwards;
