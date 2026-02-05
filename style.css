@@ -42,6 +42,7 @@ main .reels-container .reel {
   position: relative;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  overflow: hidden;
 }
 main .reels-container .reel .reel-left {
   width: 100%;
@@ -151,6 +152,7 @@ main .reels-container .reel .reel-right .commet p {
     position: relative;
     left: 50%;
     transform: translate(-50%);
+    overflow: unset;
   }
   main .reels-container .reel .reel-right {
     right: -65px;
