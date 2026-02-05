@@ -15,7 +15,7 @@ body {
 
 i {
   color: white;
-  font-size: 40px;
+  font-size: 2rem;
 }
 
 main {
@@ -42,7 +42,6 @@ main .reels-container .reel {
   position: relative;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  overflow: hidden;
 }
 main .reels-container .reel .reel-left {
   width: 100%;
@@ -102,8 +101,8 @@ main .reels-container .reel .reel-left .reel-left-bottom img {
 }
 main .reels-container .reel .reel-right {
   position: absolute;
+  top: 53%;
   right: 5px;
-  top: 55%;
   margin-bottom: 10px;
 }
 main .reels-container .reel .reel-right div {
@@ -121,6 +120,7 @@ main .reels-container .reel .reel-right .commet {
 main .reels-container .reel .reel-right .like p,
 main .reels-container .reel .reel-right .commet p {
   text-align: center;
+  width: 35px;
 }
 
 .insta-like.show {
@@ -143,5 +143,34 @@ main .reels-container .reel .reel-right .commet p {
   100% {
     opacity: 0;
     transform: translate(-50%, -250%) scale(0.7);
+  }
+}
+@media (min-width: 768px) {
+  main .reels-container .reel {
+    width: 50%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  main .reels-container .reel .reel-right {
+    right: -65px;
+  }
+}
+@media (min-width: 1024px) {
+  main .reels-container .reel {
+    width: 30%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 5px;
+  }
+  main .reels-container .reel .reel-left video {
+    border-radius: 10px;
+  }
+  main .reels-container .reel .reel-right {
+    right: -65px;
+  }
+  main .reels-container .reel .reel-left-bottom .bottom-down p {
+    width: 30%;
   }
 }/*# sourceMappingURL=style.css.map */

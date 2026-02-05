@@ -15,7 +15,7 @@ body {
 
 i {
     color: white;
-    font-size: 40px;
+    font-size: 2rem;
 }
 
 main {
@@ -44,7 +44,6 @@ main {
             position: relative;
             scroll-snap-align: start;
             scroll-snap-stop: always;
-            overflow: hidden;
 
             .reel-left {
                 width: 100%;
@@ -114,8 +113,8 @@ main {
 
             .reel-right {
                 position: absolute;
+                top: 53%;
                 right: 5px;
-                top: 55%;
                 margin-bottom: 10px;
 
                 div {
@@ -133,6 +132,7 @@ main {
                     flex-direction: column;
                     p{
                         text-align: center;
+                        width: 35px;
                     }
                 }
             }
@@ -167,4 +167,48 @@ main {
     opacity: 0;
     transform: translate(-50%, -250%) scale(0.7);
   }
+}
+
+@media (min-width: 768px) {
+    main{
+        .reels-container{
+            .reel{
+                width: 50%;
+                position: relative;
+                left: 50%;
+                transform: translate(-50%);
+                .reel-right{
+                    right: -65px;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 1024px) {
+    main{
+        .reels-container{
+            .reel{
+                width: 30%;
+                position: relative;
+                left: 50%;
+                transform: translate(-50%);
+                padding: 5px;
+                .reel-left{
+                    video{
+                        border-radius: 10px;
+                    }
+                }
+                .reel-right{
+                    right: -65px;
+                }
+                .reel-left-bottom{
+                    .bottom-down{
+                        p{
+                            width: 30%;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
