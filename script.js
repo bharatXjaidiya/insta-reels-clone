@@ -86,12 +86,15 @@ reelContainer.insertAdjacentHTML("beforeend", content);
 //LIKE & DOUBLE TAP LOGIC
 document.querySelectorAll(".reel").forEach(reel => {
   let liked = false;
+  let followed = false;
   let lastTap = 0;
 
   const video = reel.querySelector("video");
   const heartAnim = reel.querySelector(".insta-like");
   const likeIcon = reel.querySelector(".like i");
   const likeCount = reel.querySelector(".like p");
+  const follow = reel.querySelector("button");
+  
 
   // Double tap like
   video.addEventListener("click", () => {
@@ -120,7 +123,24 @@ document.querySelectorAll(".reel").forEach(reel => {
     }
     liked = !liked;
   });
+
+  //follow buttton toggle
+  follow.addEventListener('click',(e)=>{
+    if(!followed){
+      e.target.innerHTML = "Unfollow";
+      e.target.style.backgroundColor = "white";
+      e.target.style.color = "black";
+      followed = true;
+    }
+    else{
+      e.target.innerHTML="Follow";
+      e.target.style.backgroundColor = "transparent";
+      e.target.style.color = "white";
+      followed =false;
+    }
+  })
 });
+
 
 //VIDEO PLAY OPTIMIZATION
 const observer = new IntersectionObserver(entries => {
